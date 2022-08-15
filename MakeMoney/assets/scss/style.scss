@@ -1,0 +1,74 @@
+body {
+    background: gray;
+    padding:0;
+    margin:0;
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    header {
+        display: flex;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(/assets/img/makeMoneyBg1.jpg);
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/img/makeMoneyBg1.jpg);
+        background-position: 0px 0px, 50% 50%;
+        background-size: auto, cover;
+        background-repeat: repeat, no-repeat;
+        height: 680px;
+        justify-content: center;
+        color: #fff;
+        
+
+        .header_block {
+            text-align: center;
+            margin: auto;
+            
+
+            h1 {
+                position: static;
+                margin-bottom: 15px;
+                font-family: Lora, sans-serif;
+                
+                font-size: 52px;
+                font-weight: 700;
+                letter-spacing: 0px;
+            }
+
+            .button {
+                padding: 12px 40px;
+                border-radius: 20px;
+                background-color: #0274d8;
+                font-family: Lato, sans-serif;
+            }
+
+            .para_1, .para_2 {
+                margin: 30px 0;
+            }
+        }
+
+        
+    }
+    nav {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        text-align: center;
+
+            a {
+                text-decoration: none;
+                color: #fff;
+                font-size: 14px;
+
+                li {
+                    list-style-type: none;
+                    display: inline;
+                    padding: 0 10px;
+                    font-family: 'Varela Round', sans-serif;
+                }
+            }
+    }
+    
+}
