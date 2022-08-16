@@ -1,0 +1,27 @@
+/* latin-ext */
+  @font-face {
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 100;
+    src: url(https://fonts.gstatic.com/s/lato/v23/S6u-w4BMUTPHjxsIPx-mPCLC79U11vU.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'Lora';
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/lora/v25/0QIhMX1D_JOuMw_LLPtLtfOm84TX.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+ 
+  /* hebrew */
+  @font-face {
+    font-family: 'Varela Round';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/varelaround/v19/w8gdH283Tvk__Lua32TysjIfpcuPLdshZhVB.woff2) format('woff2');
+    unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+  }
+  
