@@ -3,7 +3,7 @@
 
 body {
     background: #fff;
-    font-family: Lato, sans-serif;
+    font-family: Arial,sans-serif;
     font-size: 14px;
     line-height: 20px;
     color: #333;
@@ -43,7 +43,7 @@ body {
         background-position: 0px 0px, 50% 50%;
         background-size: auto, cover;
         background-repeat: repeat, no-repeat;
-        height: 680px;
+        height: 650px;
         justify-content: center;
         color: #fff;
 
@@ -76,12 +76,12 @@ body {
             list-style-type: none;
             display: inline;
             padding: 0 30px;
-            font-family: 'Varela Round', sans-serif;
 
             a {
                 text-decoration: none;
                 color: #fff;
                 font-size: 14px;
+                font-family: 'Varela Round', sans-serif;
 
                 &:hover {
                     color: #9e9e9e;
