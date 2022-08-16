@@ -17,22 +17,56 @@ body {
         padding-top: 30px;
 
         .button {
-            padding: 12px 40px;
+            padding: 15px 40px;
             border-radius: 20px;
-            background-color: #0274d8;
             font-family: Lato, sans-serif;
-            display: block;
             max-width: max-content;
-            
+            margin: 20px;
         }
 
         .para_1,
         .para_2 {
-            margin: 10px 0;
+            margin: 20px 0;
         }
 
         .m_auto {
-            margin: auto;
+            
+        }
+
+        .w_app {
+            background-color: #45b536;
+            &:hover {
+                background-color: #69d25e;
+            }
+
+            &::before {
+                content: '';
+                display: inline-block;
+                height: 20px;
+                width: 20px;
+                background-image: url(/assets/img/w_app_icon.png);
+                background-position: center center;
+                background-size: contain;
+                margin-right: 10px;
+            }
+        }
+
+        .tele {
+            background-color: #3a97d7;
+            &:hover {
+                background-color: #4db0e5;
+            }
+
+            &::before {
+                content: '';
+                display: inline-block;
+                height: 20px;
+                width: 20px;
+                background-image: url(/assets/img/tele_icon.png);
+                background-position: center center;
+                background-size: contain;
+                margin-right: 10px;
+            }
         }
     }
 
@@ -122,7 +156,7 @@ body {
             display: flex;
             flex-wrap: wrap;
             background: #fcf7f3;
-            padding: 50px 40px;
+            padding: 50px 80px;
             justify-content: space-between;
 
             .child_third {
@@ -155,7 +189,7 @@ body {
                             display: inline-block;
                             height: 20px;
                             width: 20px;
-                            background-image: url(https://uploads-ssl.webflow.com/62c3e5b0404e6524c8582fb1/62c3ed8f69f3e623c4a24331_icons8-radio-button-58.png);
+                            background-image: url(/assets/img/makeMoney_icon.jpeg);
                             background-position: center center;
                             background-size: contain;
                             margin-right: 10px;
