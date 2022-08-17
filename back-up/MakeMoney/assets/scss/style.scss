@@ -1,5 +1,7 @@
 @forward "normalize";
-@forward "fonts";
+@forward "page2";
+
+html {scroll-behavior: smooth;}
 
 body {
     background: #fff;
@@ -13,8 +15,26 @@ body {
         color: #fff;
     }
 
+    .alignment {
+        max-width: 1320px;
+        margin: auto;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .visible {
+        display: block;
+    }
+
     .join_block {
         padding-top: 30px;
+        text-align: center;
+
+        .m_auto {
+            margin: 10px auto;
+        }
 
         .button {
             padding: 15px 40px;
@@ -23,19 +43,25 @@ body {
             max-width: max-content;
             margin: 20px;
 
-            @media (max-width: 965px) {
+            @media (max-width: 1192px) {
                 display: block;
                 margin-bottom:10px;
+                margin: 10px auto;
+            }
+
+            @media (max-width: 481px) {
+                max-width: initial;
+                margin: 10px;
             }
         }
 
         .para_1,
         .para_2 {
             margin: 20px 0;
-        }
 
-        .m_auto {
-            margin: 10px auto;
+            @media (max-width: 779px) {
+                margin: 20px;
+            }
         }
 
         .w_app {
@@ -49,7 +75,7 @@ body {
                 display: inline-block;
                 height: 20px;
                 width: 20px;
-                background-image: url(/assets/img/w_app_icon.png);
+                background-image: url(../img/w_app_icon.png);
                 background-position: center center;
                 background-size: contain;
                 position: absolute;
@@ -70,19 +96,55 @@ body {
                 display: inline-block;
                 height: 20px;
                 width: 20px;
-                background-image: url(/assets/img/tele_icon.png);
+                background-image: url(../img/tele_icon.png);
                 background-position: center center;
                 background-size: contain;
                 position: absolute;
                 margin-left: -25px;
             }
         }
+
+        .subs_form {
+            width: 50%;
+            margin: auto;
+
+            input {
+                padding: 10px;
+                width: 50%;
+                border: 0;
+
+                border: none;
+                resize: none;
+                outline: none;
+                letter-spacing: 0.5px;
+            }
+
+            button {
+                padding: 10px;
+                margin-left: -5px;
+                width: 20%;
+                background: #4c98d9;
+                border: 0;
+                color: #fff;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #4db0e5;
+                }
+            }
+
+            @media (max-width:799px) {
+                width: 100%;
+            }
+            
+        }
+        
     }
 
     header {
         display: flex;
         background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(/assets/img/makeMoneyBg1.jpg);
-        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/img/makeMoneyBg1.webp);
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/makeMoneyBg1.webp);
         background-position: 0px 0px, 0% 80%;
         background-size: auto, cover;
         background-repeat: repeat, no-repeat;
@@ -103,6 +165,7 @@ body {
                 font-weight: 700;
                 letter-spacing: 0px;
                 line-height: 1.1;
+                padding: 0px 5px;
             }
         }
 
@@ -150,7 +213,7 @@ body {
     main {
         .second_fold {
             text-align: center;
-            padding: 80px;
+            padding: 80px 0;
 
             h2 {
                 margin-bottom: 40px;
@@ -162,6 +225,14 @@ body {
             p {
                 font-family: Lato, sans-serif;
                 text-align: center;
+                @media (max-width: 1400px) {
+                    padding: 0px 80px;
+                }
+
+                @media (max-width: 750px) {
+                    padding: 0px 0px;
+                }
+
             }
 
             @media (max-width: 779px) {
@@ -169,10 +240,14 @@ body {
             }
         }
 
+        .cream {
+            background: #fcf7f3;
+        }
+
         .third_fold {
             display: flex;
             flex-wrap: wrap;
-            background: #fcf7f3;
+            
             padding: 80px;
             justify-content: space-between;
 
@@ -185,15 +260,12 @@ body {
                     font-family: Lora, sans-serif;
                     font-size: 32px;
                     line-height: 40px;
+                    margin: 0 0 30px;
                 }
 
                 img {
                     border-radius: 50px 0;
                     margin: auto;
-                }
-
-                .w_img_1 {
-                    width: 85%;
                 }
 
                 .w_auto {
@@ -220,7 +292,7 @@ body {
                             display: inline-block;
                             height: 20px;
                             width: 20px;
-                            background-image: url(/assets/img/makeMoney_icon.jpeg);
+                            background-image: url(../img/makeMoney_icon.jpeg);
                             background-position: center center;
                             background-size: contain;
                             margin-right: 10px;
@@ -239,12 +311,19 @@ body {
                 }
             }
 
+
+
             .child_img {
                 text-align: center;
             }
 
             @media (max-width: 779px) {
                 padding: 20px;
+
+                article:nth-child(2) {
+                    order: -1;
+                    margin: 20px 0 0 0;
+                }
             }
         }
 
@@ -336,6 +415,12 @@ body {
                 width: 70%;
             }
 
+            p {
+                text-align:center; 
+                margin: 10px 0;
+                font-size: 14px;
+            }
+
             label {
                 width: 100%;
                 font-family: Lora, sans-serif;
@@ -343,16 +428,17 @@ body {
                 margin-bottom: 5px;
                 display:block;
             }
-            input {
-                width: 100%;
+            input, button {
+                width: -webkit-fill-available;
                 padding: 10px;
                 border-radius: 20px ;
                 border: 1px solid #ccc;
                 margin-bottom: 10px;
+                letter-spacing: 0.5px;
             }
 
-            input[type="submit"] {
-                width: max-content;
+            button {
+                width: 40%;
                 padding: 10px 20px;
                 background-color: #0274d8;
                 color: white;
@@ -362,6 +448,10 @@ body {
                     background-color: #208ff0;
                     cursor: pointer;
                 }
+
+                @media (max-width:779px) {
+                    width: -webkit-fill-available;
+                }
             }
 
             h3 {
@@ -370,6 +460,24 @@ body {
                 margin: 0px;
                 line-height: 40px;
                 text-align: center;
+            }
+
+            span {
+                display: block;
+                padding: 5px 10px;
+                font-style: italic;
+                font-size: 12px;
+                margin-bottom: 10px;
+                font-weight: bold;
+                
+                &.email-success-msg {
+                    background: rgb(15 143 0 / 10%);
+                }
+
+                &.email-error-msg {
+                    background: #ff00001a;
+                }
+
             }
 
 
