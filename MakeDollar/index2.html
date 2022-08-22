@@ -17,12 +17,12 @@
             top: 0;
             height: 800px;
             background: #80808063;
-            padding: 100px 100px;
             display: none;
+            width: 100%;
         }
         .modal-wrapper.modal-transition {
             background: #fff;
-            padding: 20px;
+            padding: 100px;
             color: black;
         }
         button.modal-close.modal-toggle {
@@ -37,6 +37,10 @@
             });
 
             $(".modal-close").click(function(){
+                $(".modal_pop").css("display","none");
+            });
+
+            $(".modal_pop").click(function(){
                 $(".modal_pop").css("display","none");
             });
         });
