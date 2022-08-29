@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <style>
+            @keyframes beginBrowserAutofill {
+                0% {
+                }
+                to {
+                }
+            }
+            @keyframes endBrowserAutofill {
+                0% {
+                }
+                to {
+                }
+            }
+            .pac-container {
+                background-color: #fff;
+                position: absolute !important;
+                z-index: 1000;
+                border-radius: 2px;
+                border-top: 1px solid #d9d9d9;
+                font-family: Arial, sans-serif;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+            .pac-logo:after {
+                content: "";
+                padding: 1px 1px 1px 0;
+                height: 18px;
+                box-sizing: border-box;
+                text-align: right;
+                display: block;
+                background-image: url(https://maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white3.png);
+                background-position: right;
+                background-repeat: no-repeat;
+                background-size: 120px 14px;
+            }
+            .hdpi.pac-logo:after {
+                background-image: url(https://maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white3_hdpi.png);
+            }
+            .pac-item {
+                cursor: default;
+                padding: 0 4px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                line-height: 30px;
+                text-align: left;
+                border-top: 1px solid #e6e6e6;
+                font-size: 11px;
+                color: #515151;
+            }
+            .pac-item:hover {
+                background-color: #fafafa;
+            }
+            .pac-item-selected,
+            .pac-item-selected:hover {
+                background-color: #ebf2fe;
+            }
+            .pac-matched {
+                font-weight: 700;
+            }
+            .pac-item-query {
+                font-size: 13px;
+                padding-right: 3px;
+                color: #000;
+            }
+            .pac-icon {
+                width: 15px;
+                height: 20px;
+                margin-right: 7px;
+                margin-top: 6px;
+                display: inline-block;
+                vertical-align: top;
+                background-image: url(https://maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons.png);
+                background-size: 34px;
+            }
+            .hdpi .pac-icon {
+                background-image: url(https://maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons_hdpi.png);
+            }
+            .pac-icon-search {
+                background-position: -1px -1px;
+            }
+            .pac-item-selected .pac-icon-search {
+                background-position: -18px -1px;
+            }
+            .pac-icon-marker {
+                background-position: -1px -161px;
+            }
+            .pac-item-selected .pac-icon-marker {
+                background-position: -18px -161px;
+            }
+            .pac-placeholder {
+                color: gray;
+            }
+            .pac-target-input:-webkit-autofill {
+                animation-name: beginBrowserAutofill;
+            }
+            .pac-target-input:not(:-webkit-autofill) {
+                animation-name: endBrowserAutofill;
+            }
+        </style>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <meta name="signature_service" content="https://sign.EarnCashOnline.com" />
+
+        <title>
+            Earn Cash Online | Better Than Hard Money | Get Funds
+        </title>
+
+        <meta name="description" content="EarnCashOnline offers customized lending for real estate investors. Partner with America&#39;s fastest-growing direct lender. Better than your hard money lender." />
+        <meta name="keywords" content="" />
+
+        <meta property="”og:title”" content=" EarnCashOnline | Better Than Hard Money | Online Lender " />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="EarnCashOnline offers customized lending for real estate investors. Partner with America&#39;s fastest-growing direct lender. Better than your hard money lender." />
+        <meta
+            property="og:url"
+            content="https://www.EarnCashOnline.com/?utm_feeditemid=&amp;utm_device=c&amp;utm_term=fund%20that%20flip&amp;utm_source=google&amp;utm_medium=ppc&amp;utm_campaign=Brand_Acquisition&amp;hsa_cam=1748260790&amp;hsa_grp=69927383498&amp;hsa_mt=p&amp;hsa_src=g&amp;hsa_ad=434228909968&amp;hsa_acc=9272548953&amp;hsa_net=adwords&amp;hsa_kw=fund%20that%20flip&amp;hsa_tgt=kwd-326671385034&amp;hsa_ver=3&amp;gclid=EAIaIQobChMIzaWs-ILf-QIVAa7ICh0nWQRfEAAYASAAEgJGsfD_BwE"
+        />
+        <meta property="og:image" content="https://cdn.EarnCashOnline.com/assets/ftf-banner-9c3e2f337315028e51a90b16dba120a3443bc697db77ba74e64463b2378877df.jpg" />
+
+        <meta property="twitter:card" content="summary" />
+        <meta property="”twitter:title”" content=" EarnCashOnline | Better Than Hard Money | Online Lender " />
+        <meta property="twitter:description" content="EarnCashOnline offers customized lending for real estate investors. Partner with America&#39;s fastest-growing direct lender. Better than your hard money lender." />
+        <meta
+            property="twitter:url"
+            content="https://www.EarnCashOnline.com/?utm_feeditemid=&amp;utm_device=c&amp;utm_term=fund%20that%20flip&amp;utm_source=google&amp;utm_medium=ppc&amp;utm_campaign=Brand_Acquisition&amp;hsa_cam=1748260790&amp;hsa_grp=69927383498&amp;hsa_mt=p&amp;hsa_src=g&amp;hsa_ad=434228909968&amp;hsa_acc=9272548953&amp;hsa_net=adwords&amp;hsa_kw=fund%20that%20flip&amp;hsa_tgt=kwd-326671385034&amp;hsa_ver=3&amp;gclid=EAIaIQobChMIzaWs-ILf-QIVAa7ICh0nWQRfEAAYASAAEgJGsfD_BwE"
+        />
+        <meta property="twitter:image" content="https://cdn.EarnCashOnline.com/assets/ftf-banner-9c3e2f337315028e51a90b16dba120a3443bc697db77ba74e64463b2378877df.jpg" />
+
+        <meta name="facebook-domain-verification" content="m4it7k3gag1givflhd7p2d29c6uoio" />
+
+        <link rel="shortcut icon" type="image/x-icon" href="FAVICON" />
+
+       
+        <link rel="stylesheet" media="all" href="./assets/application-fe7e7876ee6d0c423cbd9e0292031ec117bf6018dd2d1196905045365477d683.css" data-turbolinks-track="reload" />
+
+        <!-- MOBILE MENU -->
+        <!-- <script src="./assets/main-2b76f4dd5e1512c3d5cc.js.download" defer="defer" data-turbolinks-track="reload"></script>
+        <script src="./assets/0-a9eb1c809f3749364c63.chunk.js.download" defer="defer" data-turbolinks-track="reload"></script>
+        <script src="./assets/2-14ab88f536bf69c1c234.chunk.js.download" defer="defer" data-turbolinks-track="reload"></script>
+        <script src="./assets/5-406d21c4b75414d4a2dc.chunk.js.download" defer="defer" data-turbolinks-track="reload"></script>
+        <script src="./assets/6-83acc03bc1cdf12c97e8.chunk.js.download" defer="defer" data-turbolinks-track="reload"></script>
+        <script src="./assets/7-f53b5b1f3df2dfcf81d7.chunk.js.download" defer="defer" data-turbolinks-track="reload"></script>
+        <script src="./assets/10-06d340ef4a7d02b08a5d.chunk.js.download" defer="defer" data-turbolinks-track="reload"></script>
+        <script src="./assets/14-e289f373d9683432455b.chunk.js.download" defer="defer" data-turbolinks-track="reload"></script>
+        <script src="./assets/11-e679172d7343941ed7c3.chunk.js.download" defer="defer" data-turbolinks-track="reload"></script>
+        <script src="./assets/26-4cc92e978be06da3a6cb.chunk.js.download" defer="defer" data-turbolinks-track="reload"></script>
+        <script src="./assets/25-09540ff9a57be7fce469.chunk.js.download" defer="defer" data-turbolinks-track="reload"></script>
+        <script src="./assets/23-718f386b2df499b2da1e.chunk.js.download" defer="defer" data-turbolinks-track="reload"></script>
+        <script src="./assets/54-1214da37460e91e73169.chunk.js.download" defer="defer" data-turbolinks-track="reload"></script>
+        <script src="./assets/1-c550ed713b042f4925cb.chunk.js.download" defer="defer" data-turbolinks-track="reload"></script>
+        <script src="./assets/9-08f6ea7a4cf000ec0641.chunk.js.download" defer="defer" data-turbolinks-track="reload"></script>
+        <script src="./assets/12-72ef0c61e2514b39a82f.chunk.js.download" defer="defer" data-turbolinks-track="reload"></script>
+        <script src="./assets/main-3b4edff97c448b089436.chunk.js.download" defer="defer" data-turbolinks-track="reload"></script> -->
+
+        <meta
+            http-equiv="origin-trial"
+            content="A7bG5hJ4XpMV5a3V1wwAR0PalkFSxLOZeL9D/YBYdupYUIgUgGhfVJ1zBFOqGybb7gRhswfJ+AmO7S2rNK2IOwkAAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1RoaXJkUGFydHkiOnRydWV9"
+        />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                
+              $(".fa-open").click(function(){
+                $(".header__items_main-mobile").css("display","flex");
+                $(".fa-open").css("display","none");
+                $(".fa-close").css("display","inline");
+              });
+
+                
+              $(".fa-close").click(function(){
+                $(".header__items_main-mobile").css("display","none");
+                $(".fa-open").css("display","inline");
+                $(".fa-close").css("display","none");
+              });
+
+
+            });
+            </script>
+        <link rel="stylesheet" href="./assets/style/style.css">
+    </head>
+
+    <body class="page welcome index">
+        <header id="header" class="header" data-controller="Header">
+            <div class="header__container ftf-container">
+                <a class="header__logo header__item" title="EarnCashOnline" data-controller="Track" data-category="navigation" data-action="clicked-logo" data-label="https://www.EarnCashOnline.com/" href="https://www.EarnCashOnline.com/">
+                    <img class="header__logo-img" alt="EarnCashOnline logo" src="./assets/images/EarnCashOnline.svg" />
+                </a>
+                <div class="header__items header__items_user-mobile">
+                    <button name="button" type="button" class="header__toggle-button header__link header__item" data-target="Header.toggleButton">
+                        <i class="fa-mobile-icon fa-open" data-target="Header.toggleIcon"></i>
+                        <i class="fa-mobile-icon fa-close" data-target="Header.toggleIcon"></i>
+                    </button>
+                </div>
+
+                <div class="header__items header__items_main-mobile">
+                    <a class="header__link header__item" data-controller="Track" data-category="navigation" data-action="clicked-invest" data-label="/deals" data-turbolinks="false" href="#home">Home</a>
+                    <a class="header__link header__item" data-controller="Track" data-category="navigation" data-action="clicked-get-funded" data-label="/get-funded" href="#about_us">About us</a>
+                    <a class="header__link header__item" data-controller="Track" data-category="navigation" data-action="clicked-get-funded" data-label="/get-funded" href="#hit">How It Works?</a>
+                </div>
+
+                <nav class="header__items header__items_main">
+                    <a class="header__link header__item" href="#home">Home</a>
+                    <a class="header__link header__item" href="#about_us">About us</a>
+                    <a class="header__link header__item" href="#hit">How It Works?</a>
+                </nav>
+
+            </div>
+        </header>
+
+        
+
+        <div class="page__content wrapper">
+          <!-- BANNER -->
+            <section class="static-section hero-section hero-section_charcoal skew skew_bottom-left" id="home">
+                <div class="hero-section__content static-section__content">
+                    <h1 class="static-section__title hero-section__title">MAKE MONEY ONLINE AND GET THE FUNDS <em> YOU NEED TO SUCCEED</em></h1>
+                    <p class="static-section__text hero-section__text">
+                      Earn money from a profitable side hustle and build a stable financial future <br />
+                      by growing your passive income online.
+                    </p>
+
+                    <form class="apply-form" id="new_deal_application" data-controller="ApplyForm" action="https://www.EarnCashOnline.com/apply-for-funding" accept-charset="UTF-8" method="post" data-hs-cf-bound="true">
+                        <input type="hidden" name="authenticity_token" value="oYmaWErAJq+8t4ixugwYbv4vhjR6wXHc6oxKYNNIYF4O1KtoURF4sDgodkVay9Fb9CqrDN9w2y0dUHLpGV2Gqw==" />
+                        <p class="apply-form__title">
+                          Chat with us and learn the best way to earn at least $100 day!
+                        </p>
+
+                        <input class="full-address" type="hidden" name="deal_application[street_1]" id="deal_application_street_1" />
+                        <input type="hidden" name="deal_application[street_2]" id="deal_application_street_2" />
+                        <input class="locality" type="hidden" name="deal_application[city]" id="deal_application_city" />
+                        <input class="administrative_area_level_1" type="hidden" name="deal_application[state]" id="deal_application_state" />
+                        <input class="postal_code" type="hidden" name="deal_application[zip]" id="deal_application_zip" />
+
+                        <div class="apply-form__controls">
+                            <div class="apply-form__address-control address-control">
+                                <!-- <i class="icon"></i> -->
+                                <input
+                                    type="text"
+                                    name=""
+                                    id=""
+                                    class="apply-form__field address-control__field autocomplete pac-target-input"
+                                    placeholder="Enter your email"
+                                    data-target="ApplyForm.addressField"
+                                    autocomplete="off"
+                                />
+                            </div>
+
+                            <button name="button" type="submit" class="apply-form__button button button_primary" data-action="cta-clicked-hero" data-category="home" data-label="/apply-for-funding" data-target="ApplyForm.submitButton">
+                                Earn Cash Now            
+                            </button>
+                            <span class="arrow mobile_hide">
+                                <img src="./assets/images/eco_arrow.png" alt="">
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </section>
+          
+          <!-- SECTION 2 -->
+            <section class="static-section" id="about_us">
+                <div class="static-section__content">
+                    <div class="feature-cols">
+                        <div class="feature-cols__item">
+                            <span class="feature-cols__item-label">EASY TO LEARN, EASY TO EARN</span>
+                            <h3 class="feature-cols__item-title">Join us on a live chat now and we'll tell you how.</h3>
+                            <p class="feature-cols__item-text">
+                              Your time is valuable, which is why we try to make earning money online as easy for you as possible. Simply join us on WhatsApp or Telegram, type in "Make Money Now", and our sales reps will gladly show you how.
+                            </p>
+                        </div>
+
+                        <div class="feature-cols__item">
+                            <span class="feature-cols__item-label">NO FEES, NO FUSS</span>
+                            <h3 class="feature-cols__item-title">No cash out is needed to start cashing in.</h3>
+                            <p class="feature-cols__item-text">
+                              You don't need any financial capital or pay for any fees. All you need is a little time each day to complete your tasks and you will receive your daily earnings without paying for anything.
+                            </p>
+                        </div>
+
+                        <div class="feature-cols__item">
+                            <span class="feature-cols__item-label">DAILY EARNINGS</span>
+                            <h3 class="feature-cols__item-title">Just how much you earn daily is totally up to you.</h3>
+                            <p class="feature-cols__item-text">
+                              How much you get paid depends entirely on your own pace. Making money online is  very flexible. And whether you choose to work part time or full time, you are sure to receive daily earnings every time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+          <!-- SECTION 3 *NEED AFFILIATES -->
+            <!-- <section class="mentions static-section skew skew_right skew_double">
+                <div class="static-section__content static-section__content_padded">
+                    <hr class="static-section__decorator" />
+                    <h2 class="mentions__title static-section__title">Meet Our Affiliates.</h2>
+                    <p class="mentions__text static-section__text">
+                      We work with some of the best marketing affiliates in the industry to provide you with only the best performing and top-selling products that you can promote easily and profitably
+                    </p>
+
+                    <ul class="mentions__logos">
+                        <li class="mentions__logo">
+                            <img
+                                srcset="https://cdn.EarnCashOnline.com/assets/shared/mentions/images/inc_500@2x-479d5644fb158717cee56236606f74fb5c3d1fd7f301ba5984b469723e3e0d9f.png 2x"
+                                class="mentions__logo-img"
+                                src="./assets/inc_500-cd9cddb66255e6bad99ad922d733785c450a7cdc67ae9c08849eb47ceb5e6060.png"
+                            />
+                        </li>
+                        <li class="mentions__logo">
+                            <img
+                                srcset="https://cdn.EarnCashOnline.com/assets/shared/mentions/images/ft@2x-3b70d023ae7e287af48ec1b7f0d13b4384bd23d798db7a160cae0e1ae828c7d2.png 2x"
+                                class="mentions__logo-img"
+                                src="./assets/ft-368769031b98ab4407ea37b611d70a18285252663d14f9125c406ed6bbd895ad.png"
+                            />
+                        </li>
+                        <li class="mentions__logo">
+                            <img
+                                srcset="https://cdn.EarnCashOnline.com/assets/shared/mentions/images/era@2x-c5208a136ab0c90675317eda349cd0eaccccde4ae31ed02f1153f880154e0d7b.png 2x"
+                                class="mentions__logo-img"
+                                src="./assets/era-fbf04a1a850175ce854b9106b5ec0059f9bec70360f0440c452e3fde8ae7f2c9.png"
+                            />
+                        </li>
+                        <li class="mentions__logo">
+                            <img
+                                srcset="https://cdn.EarnCashOnline.com/assets/shared/mentions/images/edison_partners@2x-9a410097f0e1e27c77c41d02cd14fa3e3bc8eb4513bdaeabbd5fa29bd80ee2bd.png 2x"
+                                class="mentions__logo-img"
+                                src="./assets/edison_partners-e6e86feeb304a7a6bc21235b35606b90e98039a591fdfe3b3fb76bab2e0a988f.png"
+                            />
+                        </li>
+                        <li class="mentions__logo">
+                            <img
+                                srcset="https://cdn.EarnCashOnline.com/assets/shared/mentions/images/forbes@2x-95479a4534b87009146cf6514799786d55b4f65d8b311bd90b353eccb92c7275.png 2x"
+                                class="mentions__logo-img"
+                                src="./assets/forbes-a46a476864f386fdaa7db01406c7e2c86956b297b9ef4feb37caf377b54df07c.png"
+                            />
+                        </li>
+                        <li class="mentions__logo">
+                            <img
+                                srcset="https://cdn.EarnCashOnline.com/assets/shared/mentions/images/rei_ink@2x-7013bf6747226d5a12e67ce9b6f4ac63230b1cde11e8aa710fe6503e764e10c7.png 2x"
+                                class="mentions__logo-img"
+                                src="./assets/rei_ink-e078da37e117c06c058d41ace40fbe6021dc3d7c76f3133856a1627d1429692f.png"
+                            />
+                        </li>
+                        <li class="mentions__logo">
+                            <img
+                                srcset="https://cdn.EarnCashOnline.com/assets/shared/mentions/images/yahoo_finance@2x-4d1f0f577db28b723cd722f8de539457a75a4ba171f71537c96379ec244b6770.png 2x"
+                                class="mentions__logo-img"
+                                src="./assets/yahoo_finance-e68640535549679b20b74152e483a2a9c087945449838d31f21126b234e3bed5.png"
+                            />
+                        </li>
+                        <li class="mentions__logo">
+                            <img
+                                srcset="https://cdn.EarnCashOnline.com/assets/shared/mentions/images/cheddar@2x-bad3e46ce1b7d00daa80879dbbf72a93b1ad86629c74ca85cce7754e21d660ab.png 2x"
+                                class="mentions__logo-img"
+                                src="./assets/cheddar-769e52f7b4f38daea989dc1f18ab2a35ec647e536d64d549ce1b80742617e4b0.png"
+                            />
+                        </li>
+                    </ul>
+                </div>
+            </section> -->
+
+          <!-- SECTION 4 -->
+            <section class="pre-approval-section static-section" id="hit">
+                <div class="static-section__content">
+                    <h2 class="pre-approval-section__title static-section__title">
+                        Making money online is as easy as <br />
+                        A - B - C
+                    </h2>
+                    <p class="pre-approval-section__text static-section__text">
+                        The perfect side hustle without any hassle
+                    </p>
+
+                    <a
+                        class="pre-approval-section__mobile-button button button_primary"
+                        href="#!"
+                    >
+                    Add us on WhatsApp and 
+                    join our live chat
+                    </a>
+
+                    <div class="pre-approval-section__steps feature-cols">
+                        <div class="feature-cols__item">
+                            <p class="feature-cols__item-text">
+                              <span class="feature-cols__item-title-icon">A</span>
+                              dd us on WhatsApp and join our live chat
+                            </p>
+                        </div>
+
+                        <div class="feature-cols__item">
+                          <p class="feature-cols__item-text">
+                            <span class="feature-cols__item-title-icon">B</span>
+                            rowse through and choose your daily tasks
+                          </p>
+                        </div>
+
+                        <div class="feature-cols__item">
+                          <p class="feature-cols__item-text">
+                            <span class="feature-cols__item-title-icon">C</span>
+                            omplete your tasks & cash in your daily earnings 
+                          </p>
+                        </div>
+                    </div>
+
+                    <a
+                        class="pre-approval-section__button button button_primary"
+                        data-controller="Track"
+                        data-category="home"
+                        data-action="cta-clicked-pre-approval-section"
+                        data-label="/apply-for-line-of-credit"
+                        href="#"
+                    >
+                        Earn Cash Now!
+                    </a>
+                    <span class="arrow_2 mobile_hide">
+                        <img src="./assets/images/eco_arrow_2.png" alt="">
+                    </span>
+                </div>
+            </section>
+
+          <!-- SECTION 5 *NEEDED A VIDEO -->
+            <!-- <section class="video-testimony static-section skew skew_right">
+                <div class="static-section__content static-section__content_padded">
+                    <div class="yt-player video-testimony__player" data-embed="ALpr2N2Jdw0" data-quality="hq720">
+                        <div class="yt-btn-play"></div>
+                        <img src="./assets/hq720.jpg" />
+                    </div>
+
+                    
+                </div>
+            </section> -->
+
+          <!-- SECTION 6 -->
+            <section class   ="featured-loans static-section skew skew_left">
+                <div class="static-section__content static-section__content_padded">
+                    <h2 class="featured-loans__title static-section__title">
+                      2 WAYS TO EARN MONEY ONLINE <br>
+                      THROUGH OUR AFFILIATE MARKETING SYSTEM
+                    </h2>
+                    <p class="featured-loans__text static-section__text">
+                      Using our affiliate marketing system, you can generate a steady income by simply joining us in our live chats. As a registered user, you will get access to our list of high earning products that you can then purchase and promote.
+                    </p>
+
+                    <div class="featured-loans__cards">
+                        <span class="arrow_3 mobile_hide">
+                            <img src="./assets/images/eco_arrow_3.png" alt="">
+                        </span>
+                        <div class="featured-loans__card colored-pane colored-pane_primary">
+                            <h3 class="colored-pane__title">
+                                ACTIVE DAILY EARNINGS
+                            </h3>
+                            <p class="colored-pane__text">
+                              Based on how many tasks you have completed, you will receive a cash payout anywhere from $25 to over $5,000 every day.
+                            </p>
+
+                            <!-- <a
+                                class="button button_full button_primary-dark"
+                                data-controller="Track"
+                                data-category="home"
+                                data-action="cta-clicked-pre-approval-option"
+                                data-label="/apply-for-line-of-credit"
+                                href="https://www.EarnCashOnline.com/apply-for-line-of-credit"
+                            >
+                                Get Pre-Approved
+                            </a> -->
+                        </div>
+
+                        <div class="featured-loans__card colored-pane colored-pane_charcoal">
+                            <h3 class="colored-pane__title">
+                              STABLE PASSIVE INCOME
+                            </h3>
+                            <p class="colored-pane__text">
+                              You will also enjoy and grow a stable passive income from commissions based on the number of referrals you make and how much your referred person earns.
+                            </p>
+
+                            <a
+                                class="pre-approval-section__button button button_primary"
+                                data-controller="Track"
+                                data-category="home"
+                                data-action="cta-clicked-pre-approval-section"
+                                data-label="/apply-for-line-of-credit"
+                                href="#"
+                            >
+                                Earn Cash Now!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+          <!-- SECTION 7 -->
+            <section class="get-funded-section static-section">
+                <div class="static-section__content">
+                    <div class="get-funded-section__cols">
+                        <div class="get-funded-section__col">
+                            <h3 class="get-funded-section__title">
+                                FEATURED MARKETING AFFILIATE <br />
+                            </h3>
+                            <p class="get-funded-section__subtitle geek_font">
+                                GEEK
+                            </p>
+
+                           
+
+                            <div class="get-funded-section__slider comments-slider" data-controller="CommentsSlider">
+                                <div class="comments-slider__container">
+                                    
+
+                                    <div class="comments-slider__viewport">
+                                        <div class="comments-slider__slides" data-target="CommentsSlider.slides">
+                                            <div class="comments-slider__slide">
+                                                <div class="comments-slider__slide-pane ftf-pane ftf-pane_skew-bottom">
+                                                    <img class="comments-slider__slide-icon" src="./assets/quote-0860bf4f18c639ca4541d837b965467bade9c1501860b73963c79c834286c94e.svg" />
+                                                    <h2>Level Up Your Daily Online Earnings Through 
+                                                      the GEEK App</h2>
+                                                    <p class="comments-slider__slide-text">
+                                                      Daily tasks will be listed in the GEEK app where you can buy and promote a wide range of products.
+                                                      <br>
+                                                      For each product that you buy or promote, you will receive a service fee from the product’s seller.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+                                </div>
+                            </div>
+                            <a
+                                class="pre-approval-section__button button button_primary"
+                                data-controller="Track"
+                                data-category="home"
+                                data-action="cta-clicked-pre-approval-section"
+                                data-label="/apply-for-line-of-credit"
+                                href="#"
+                            >
+                                Earn Cash Now!
+                            </a>
+                        </div>
+                        <div class="get-funded-section__col">
+                          <h3>GEEK has 6 room ratings. The higher the room 
+                            rating,  the higher your earnings will be!</h3>
+
+                            <ul class="get-funded-section__details-features features">
+                                <li class="features__item">
+                                  <span class="features__item-icon"> </span>
+                                    <div class="features__item-content">
+                                        <p class="features__item-title">
+                                          Bronze Room 
+                                        </p>
+                                        <p class="features__item-text">
+                                          With a daily payout of 2.5%, users in this room will receive 20 tasks per day. Upon tasks completion, $25 will be credited to your account.
+                                        </p>
+                                    </div>
+                                </li>
+
+                                <li class="features__item">
+                                    <span class="features__item-icon"> </span>
+                                    <div class="features__item-content">
+                                        <p class="features__item-title">
+                                          Silver Room
+                                        </p>
+                                        <p class="features__item-text">
+                                          With a daily payout of 2.8%, users in this room will receive 25 tasks per day. Upon tasks completion, $28 will be credited to your account.
+                                        </p>
+                                    </div>
+                                </li>
+
+                                <li class="features__item">
+                                  <span class="features__item-icon"> </span>
+                                    <div class="features__item-content">
+                                        <p class="features__item-title">
+                                          Gold Room
+                                        </p>
+                                        <p class="features__item-text">
+                                          With a daily payout of 3.2%, users in this room will receive 30 orders per day. Upon tasks completion, $160 will be credited to your account.
+                                        </p>
+                                    </div>
+                                </li>
+
+                                <li class="features__item">
+                                  <span class="features__item-icon"> </span>
+                                    <div class="features__item-content">
+                                        <p class="features__item-title">
+                                          Platinum Room
+                                        </p>
+                                        <p class="features__item-text">
+                                          With a daily payout of 3.8%, users in this room will receive 35 orders per day. Upon tasks completion, $760 will be credited to your account.
+                                        </p>
+                                    </div>
+                                </li>
+
+                                <li class="features__item">
+                                  <span class="features__item-icon"> </span>
+                                    <div class="features__item-content">
+                                        <p class="features__item-title">
+                                          Diamond Room
+                                        </p>
+                                        <p class="features__item-text">
+                                          With a daily payout of 4.6%, users in this room will receive 40 orders per day. Upon tasks completion, $2,300 will be credited to your account.
+                                        </p>
+                                    </div>
+                                </li>
+
+                                <li class="features__item">
+                                  <span class="features__item-icon"> </span>
+                                  <div class="features__item-content">
+                                      <p class="features__item-title">
+                                        VIP Room
+                                      </p>
+                                      <p class="features__item-text">
+                                        With a daily payout of 5.6%, users in this room users will receive 50 orders per day. Upon tasks completion, $5,600 will be credited to your account.
+                                      </p>
+                                  </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+          <!-- Section 8 -->
+            <section class="recently-funded static-section">
+                <div class="recently-funded__content ftf-container">
+                    <h2 class="static-section__title">
+                      MEET OUR TOP ONLINE MONEY MAKERS
+                      <span class="arrow_4 mobile_hide">
+                        <img src="./assets/images/eco_smile.png" alt="">
+                    </span>
+                    </h2>
+                    <p class="recently-funded__text static-section__text">
+                      They learned. They earned. <br>
+                      Meet some of our community members whose financial futures have changed for the better.
+                    </p>
+
+                    <div class="deal-cards">
+                        <a style="box-shadow: 0px 5px 15px rgb(0 0 0 / 12%);border-radius: 10px;">
+                            <div class="deal-card__img" style="background-image: url('./assets/images/testimony_girl.jpg');" ></div>
+                            <div class="deal-card__details">
+                              <h4 class="deal-card__title"> Jennifer Godfrey</h4>
+                                <span class="testimony_sub_name">28, Retail Worker</span>
+                                <div class="deal-card__summary-container">
+                                    <p class="deal-card__summary">
+                                      "I lost my job during the pandemic and since then, it was a struggle for me to be able to afford even the simplest things, like rent and car insurance... EarnCashOnlne was a big help. I managed to not only pay my dues, but also put some money aside for a rainy day!"
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a style="box-shadow: 0px 5px 15px rgb(0 0 0 / 12%);border-radius: 10px;">
+                          <div class="deal-card__img" style="background-image: url('./assets/images/testimony_girl_2.jpg');" ></div>
+                          <div class="deal-card__details">
+                            <h4 class="deal-card__title">Marc Daniels</h4>
+                             <span class="testimony_sub_name">25, Graduate Student</span>
+                              <div class="deal-card__summary-container">
+                                  <p class="deal-card__summary">
+                                    "Juggling a regular job and my studies can be difficult, especially when I encounter conflicts in my schedule. Since I started earning cash online, I now have the freedom to work whenever I want and still have enough money to help pay my fees and time to just go out and have fun!"
+                                  </p>
+                              </div>
+                          </div>
+                        </a>
+
+                        <a style="box-shadow: 0px 5px 15px rgb(0 0 0 / 12%);border-radius: 10px;">
+                          <div class="deal-card__img" style="background-image: url('./assets/images/testimony_male.jpg');" ></div>
+                          <div class="deal-card__details">
+                            <h4 class="deal-card__title"> Linda Hawthorne</h4>
+                            <span class="testimony_sub_name">32, Uber Driver</span>
+                              <div class="deal-card__summary-container">
+                                  <p class="deal-card__summary">
+                                    "I was never very technologically savvy and the internet was something I only used for emails, but since one of my friends referred me to EarnCashOnline, I have discovered that getting extra cash just from being on the internet is SO easy! Now, not only has my screen time increased, my income has gone way up too!"
+                                  </p>
+                              </div>
+                          </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+          <!-- Section 9 -->
+            <section class="static-section deals-investing">
+                <div class="static-section__content deals-investing__content">
+                    <h3 class="static-section__title deals-investing__title">
+                      Add us on WhatsApp or Telegram and type in <br>
+                      “Make Money Now”
+                    </h3>
+                    <a class="button button_primary" data-controller="Track" data-category="home" data-action="cta-clicked-lender-section" data-label="/lender" href="#">Earn Cash Now!</a>
+                    
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer" id="contact_us">
+            <div class="ftf-container footer__cols">
+                <div class="footer__col">
+                    <p class="footer__col-title">Links</p>
+                    <nav class="footer__col-links">
+                        <a class="footer__link footer__col-link" href="#home">Home</a>
+                        <a class="footer__link footer__col-link" href="#about_us">About Us</a>
+                        <a class="footer__link footer__col-link" href="#hit">How it works?</a>
+
+                    </nav>
+                </div>
+                
+                <div class="footer__col">
+                    <p class="footer__col-title">Join Us!</p>
+
+                    <p class="footer__text">
+                        Enter your e-mail below to subscribe.
+                    </p>
+
+                    <form class="subscribe-form" data-controller="SubscribeForm" action="https://www.EarnCashOnline.com/welcome/subscribe" accept-charset="UTF-8" data-remote="true" method="post" data-hs-cf-bound="true">
+                        <input data-target="SubscribeForm.hutkField" type="hidden" name="hutk" id="hutk" value="undefined" />
+                        <input data-target="SubscribeForm.pageNameField" type="hidden" name="pageName" id="pageName" value="EarnCashOnline | Better Than Hard Money | Online Lender" />
+                        <input
+                            data-target="SubscribeForm.pageUrlField"
+                            type="hidden"
+                            name="pageUrl"
+                            id="pageUrl"
+                            value="https://www.EarnCashOnline.com/?utm_feeditemid=&amp;utm_device=c&amp;utm_term=fund%20that%20flip&amp;utm_source=google&amp;utm_medium=ppc&amp;utm_campaign=Brand_Acquisition&amp;hsa_cam=1748260790&amp;hsa_grp=69927383498&amp;hsa_mt=p&amp;hsa_src=g&amp;hsa_ad=434228909968&amp;hsa_acc=9272548953&amp;hsa_net=adwords&amp;hsa_kw=fund%20that%20flip&amp;hsa_tgt=kwd-326671385034&amp;hsa_ver=3&amp;gclid=EAIaIQobChMIzaWs-ILf-QIVAa7ICh0nWQRfEAAYASAAEgJGsfD_BwE"
+                        />
+
+                        <div class="grouped-controls subscribe-form__controls" data-target="SubscribeForm.controls">
+                            <input class="ftf-form-control grouped-controls__field" placeholder="Email address" data-target="SubscribeForm.emailField" type="text" name="email" id="email" />
+
+                            <button
+                                name="button"
+                                type="submit"
+                                class="button button_primary grouped-controls__button"
+                                data-action="cta-subscribed-to-newsletter"
+                                data-category="footer"
+                                data-disable-with='&lt;i class="fa fa-spinner fa-spin"&gt;&lt;/i&gt;'
+                                data-label="Sign Up"
+                                data-target="SubscribeForm.submitButton"
+                            >
+                                Sign Up
+                            </button>
+                        </div>
+                        <p class="subscribe-form__message" data-target="SubscribeForm.message"></p>
+                    </form>
+                </div>
+            </div>
+
+            <div class="ftf-container footer__legal">
+                <p class="footer__legal-copyright">© EarnCashOnline 2022.</p>
+
+                <div class="footer__legal-links">
+                    <a class="footer__link footer__legal-link" data-controller="Track" data-category="footer" data-action="clicked-privacy-policy" data-label="/privacy-policy" href="https://www.EarnCashOnline.com/privacy-policy">
+                        Privacy Policy
+                    </a>
+
+                    <a class="footer__link footer__legal-link" data-controller="Track" data-category="footer" data-action="clicked-tos" data-label="/terms-of-service" href="https://www.EarnCashOnline.com/terms-of-service">Terms of Service</a>
+                </div>
+            </div>
+        </footer>     
+    </body>
+</html>

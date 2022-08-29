@@ -1,0 +1,277 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+  body{
+    color: #1a2a43!important;
+  }
+
+.fa-open {
+    display: inline;
+}
+
+.fa-close {
+    display: none;
+}
+
+/* MENU */
+.fa-open:before {
+    content: "+";
+    color: #1a2a43;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Lato";
+    font-style: normal;
+}
+
+.fa-close:before {
+    content: "-";
+    color: #1a2a43;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Lato";
+    font-style: normal;
+}
+
+@media (min-width:767px) {
+    header.header .header__items_main-mobile {
+        display: none!important;
+    }
+}
+
+header.header .header__link {
+    color: #1a2a43;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+header.header .header__items_main-mobile .header__item {
+    color: #1a2a43;
+    font-weight: normal;
+    font-size: 18px;
+    width: 100%;
+    border-bottom: 1px solid #efefef;
+}
+
+a.header__link.header__item:hover {
+    color: #eb5021;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.testimony_sub_name {
+    display:block;
+    font-size: 18px;
+    color: #f76c42!important;
+}
+
+.feature-cols__item-title-icon {
+    margin-right: 0;
+}
+
+.feature-cols__item-title-icon {
+    font-size: 30px;
+}
+
+section#get_funded {
+    background: #262638;
+    padding: 50px 0px;
+    color: #fff;
+}
+
+section#get_funded h2, section#get_funded p, section#get_funded a {
+    color: #1a2a43;
+}
+
+.hero-section_charcoal:before {
+    background: #d5e5ff;
+}
+
+h1.static-section__title.hero-section__title {
+    color: #1a2a43;
+}
+
+p.static-section__text.hero-section__text, p.apply-form__title {
+    color: #1a2a43!important;
+}
+
+.static-section__title em {
+    color: #f76c42;
+    font-style: normal;
+}
+
+.button.button_primary, .button.button_primary:visited {
+    background-color: #f76c42!important;
+    border-color: #f76c42!important;
+    color: #ffffff !important;
+}
+
+.button.button_primary:hover, .button.button_primary:focus, .button.button_primary:active, .button.button_primary:visited:hover, .button.button_primary:visited:focus, .button.button_primary:visited:active {
+    background-color: #eb5021!important;
+    border-color: #eb5021!important;
+}
+
+span.feature-cols__item-label {
+    color: #f76c42;
+    font-size: 20px;
+}
+
+p.feature-cols__item-text {
+    color: #1a2a43;
+}
+
+
+/* FIRST SECTION */
+
+
+.hero-section__content.static-section__content:after {
+    content: url('../images/eco_bg.png');
+    height: 200px;
+    width: 300px;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    transform: scale(.6);
+    bottom: 250px;
+}
+
+.arrow img {
+    position: absolute;
+    width: 100px;
+    bottom: 25%;
+}
+
+@media (max-width:799px) {
+    .arrow img {
+        display: none;
+    }
+    .hero-section__content.static-section__content:after {
+        display: none;
+    }
+}
+
+/* THIRD SECTION */
+
+section#get_funded {
+    background: #d5e5ff;
+    padding: 50px 0px;
+    color: #fff;
+}
+
+
+span.feature-cols__item-title-icon {
+    background: #ff9f82;
+    color: #1a2a43;
+    font: 700 36px/1.2 Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+}
+
+span.arrow_2 img {
+    position: absolute;
+    transform: scale(.5);
+    margin-top: -18%;
+    right: 0;
+}
+
+
+/* FOURTH SECTION */
+
+.featured-loans:before {
+    background: #f6ebe5;
+}
+
+.featured-loans__title {
+    color: #1a2a43;
+}
+
+.colored-pane_charcoal {
+    background: #3b4c66;
+}
+
+.colored-pane_primary {
+    background: #ff9f82;
+}
+
+span.arrow_3 img {
+    position: absolute;
+    left: 0;
+    transform: scale(.3);
+    z-index: -1;
+}
+
+/* FIFTH SECTION */
+h3.get-funded-section__title {
+    font-family: 'Lato'!important;
+    font-size: 25px!important;
+    color: #f76c42!important;
+}
+
+p.get-funded-section__subtitle.geek_font {
+    font: 700 30px/1.2 Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    color: #1a2a43;
+}
+
+p.features__item-title {
+    font-size: 20px;
+    color: #f76c42!important;
+}
+
+h4.deal-card__title {
+    color: #1a2a43;
+}
+
+span.features__item-icon:before {
+    content: "🡆";
+}
+
+p.deal-card__summary {
+    color: #53606c!important;
+}
+
+span.features__item-icon {
+    color: #fff;
+    background: #ff9f82;
+    
+    
+}
+
+p.comments-slider__slide-text {
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+}
+
+.deal-card__img:after {
+    content: "";
+    background: none;
+}
+
+span.arrow_4 img {
+    width: 80px;
+    margin-top: -50px;
+}
+
+/* SIXTH SECTION */
+.deals-investing .deals-investing__title {
+    color: #1a2a43;
+}
+
+.deals-investing {
+    background: #d5e5ff;
+}
+
+/* FOOTER */
+footer.footer {
+    background: #1a2a43;
+}
+
+
+@media (max-width: 799px) {
+    .mobile_hide {display: none;}
+    
+}
+
+@media (max-width: 920px) {
+    span.arrow_4 img {margin-top:0!important;}
+}
