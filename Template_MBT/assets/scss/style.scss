@@ -1,0 +1,121 @@
+@use 'util' as u;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: gray;
+    max-width: 1320px;
+    margin: auto;
+    font-size: u.rem(16);
+
+    main {
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .div_1 {
+            width: 100%;
+
+            @media(min-width: 799px) {
+                width: 100%;
+            }
+        }
+
+        .div_2 {
+            width: 100%;
+
+            /* Desktop size */
+            @media(min-width: 799px) {
+                width: 49%;
+            }
+        }
+
+        .div_3 {
+            width: 100%;
+
+            @media(min-width: 799px) {
+                width: 33%;
+            }
+        }
+
+        .p_20 {
+            padding: 20px;
+        }
+
+        .txt_default {
+            font-size: clamp(u.rem(14), u.rem(12) + 2vw, u.rem(20));
+        }
+
+        .w_100 {
+            width: 100%;
+        }
+
+        nav {
+            
+
+            ul#desktop_nav {
+                display: none;
+                list-style: none;
+                
+                li {
+                    display: inline;
+                    padding: 0px 20px;
+
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+
+                        &:hover {
+                            color: green;
+                        }
+                    }
+                }
+
+                @media (min-width: 799px) {
+                    display: inline;
+                }
+            }
+
+            .mobile_nav {
+                display: inline;
+
+                .mobile_icon {
+                    display: block;
+                    text-align: right;
+                    padding: 20px;
+
+                    &:before {
+                        content: url("../img/mobile_menu.png");
+                    }
+                }
+
+                ul {
+                    list-style: none;
+
+                    li {
+                        padding: 10px 0px;
+                        text-align: center;
+
+                        &:hover a {
+                            color: green;
+                        }
+                        a {
+                            text-decoration: none;
+                            color: #fff;
+
+                        }
+                    }
+                }
+
+                @media (min-width: 799px) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
