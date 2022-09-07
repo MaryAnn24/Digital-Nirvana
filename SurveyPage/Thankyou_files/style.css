@@ -1,0 +1,421 @@
+
+html {
+    scroll-behavior: smooth;
+  }
+
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+.home-header-container {
+    padding: 20px;
+    max-width: 1920px;
+    width: 85%;
+    margin: auto;
+}
+
+.home-header-container nav ul li {
+    display: inline;
+    color: #fff;
+    padding: 0px 15px;
+}
+
+.home-header-container ul li a {
+    color: #fff;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 12px;
+}
+
+.home-header-container ul li a:hover {
+    color: #ffb703;
+}
+
+.active {
+    color: #ffb703!important;
+}
+
+.home-slide-sticky h1 {
+    font-family: 'Montserrat',sans-serif!important;
+    font-size: 55px!important;
+}
+
+.home-slide-sticky h2 {
+    font-weight: bold!important;
+    font-size: 100px!important;
+}
+
+.subscribe_form h1 {
+    padding:0!important;
+    color: #000!important;
+    font-family: 'Montserrat',sans-serif!important;
+}
+
+.subscribe_form .home-slide-sticky {
+    height: 100%;
+}
+
+.subs_form {
+    background: #023047!important;
+    color: #fff!important;
+    font-family: 'Montserrat',sans-serif;
+}
+
+.subs_form h1{
+    font-family: 'Montserrat',sans-serif;
+}
+
+section#contact_us {
+    margin: 100px auto;
+    width: 80%!important;
+}
+
+.main_body {
+    max-width: 1320px;
+    margin: auto;
+    background: #023047;
+    padding: 0px 80px;
+    height: fit-content;
+}
+
+
+.w_100 {
+    width: 100%;
+}
+
+.flex {
+    
+}
+
+.flex_section_2 {
+    width: 48%;
+}
+
+.home-hiw-container-buttons {
+    margin-top: 30px;
+}
+
+body .join_block .button {
+    padding: 15px 40px;
+    border-radius: 20px;
+    font-family: Lato,sans-serif;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    margin: 20px;
+    
+}
+body .join_block .tele {
+    background-color: #3a97d7!important;
+    color: #fff;
+    border: 1px solid #3a97d7!important;
+    max-width: 100%;
+    width: 100%!important;
+    margin: 20px auto;
+    border-radius:20px!important;
+}
+
+body .join_block .w_app {
+    background-color: #45b536!important;
+    color: #fff;
+    border: 1px solid #45b536!important;
+    max-width: 100%;
+    width: 100%!important;
+    margin: 20px auto;
+    border-radius:20px!important;
+}
+
+.home-jtc {
+    padding: 1vw 4vw;
+}
+
+.home-wtp-container {
+    padding: 14vw 0 14vw 100px;
+}
+
+div#how_it_works {
+    padding: 1vw 4vw;
+}
+
+
+
+.hidden {
+    display: none;
+}
+
+
+        input#email {
+            padding: 10px;
+            resize: none;
+            outline: none;
+            letter-spacing: 0.5px;
+            border: 1px solid gray;
+        }
+        
+        button#subscribe-submit {
+            padding: 10px;
+            margin-left: -5px;
+            width: 20%;
+            border: 0;
+            color: #fff;
+            cursor: pointer;
+            /* border: 1px solid gray; */
+        }
+        button.subscribe-button.modal-toggle {
+            color: #fff;
+            border: 0;
+        }
+        
+        a.button.w-button.m_auto.tele.block {
+            display: block;
+        }
+        
+        .telegram_box {
+            border-left: 1px solid #80808042;
+        }
+        
+        .subs_form .flex {
+            border: 1px solid #80808042;
+            margin-top: 20px;
+            padding: 20px 0px;
+            border-radius: 5px;
+        }
+        
+        .socials_btn h4{
+            font-family: Lora,sans-serif !important;
+        }
+        
+        .w_app{
+            display: none!important;
+        }
+        
+        .w_app_text {
+            display: block!important;
+        }
+        
+        .barcode{
+            display: block!important;
+        }
+        
+        @media (max-width:799px) {
+            
+            .subs_form {
+                padding: 10px;
+            }
+            
+            section#contact_us {
+                width: 90%!important;
+            }
+            
+            .main_body {padding: 0!important; }
+            
+            .telegram_box {
+                border-top: 1px solid #80808042;
+                border-left: 0;
+                margin-top: 30px;
+                padding-top: 30px;
+            }
+            
+            .subs_form .flex {
+                border:0;
+                /*margin-top: 20px;*/
+                /*padding: 20px 0px;*/
+                /*border-radius: 5px;*/
+            }
+            
+            .join_block {
+                padding: 0px!important;
+            }
+            
+            .w_app{
+                display: block!important;
+                max-width: 100%!important;
+            }
+            
+             .w_app_text {
+                display: none!important;
+            }
+            
+            a.chat-button {
+                display: block!important;
+            }
+            
+            #barcode{
+                display: none!important;
+            }
+            
+            .modal-wrapper.modal-transition {
+                height: 420px;
+            }
+            
+        }
+        
+        
+        @media (max-width:799px) {
+            .home-header-container nav ul li {
+                padding: 0px 10px;
+            }
+            
+            nav {
+                text-align: center;
+            }
+            
+            .home-slide-sticky h1 {
+                font-size: 35px!important;
+            }
+            
+            .home-slide-sticky h2 {
+                font-size: 80px!important;
+            }
+            
+            .flex {
+                display: block!important;
+            }
+            
+            .flex_section_2 {
+                width: 100%;
+            }
+            
+            .whats_app_box {
+                display:none!important;
+            }
+        }
+        
+        
+            
+        .w_app {
+            background-color: #45b536;
+            color:#fff;
+            
+        }
+        
+        .w_app:hover {
+                background-color: #69d25e;
+            }
+
+        .w_app::before {
+                content: '';
+                display: inline-block;
+                height: 20px;
+                width: 20px;
+                background-image: url(/images/w_app_icon.png);
+                background-position: center center;
+                background-size: contain;
+                position: absolute;
+                margin-top: 0px;
+                margin-left: -25px;
+                
+        }
+        
+        .tele::before {
+                content: '';
+                display: inline-block;
+                height: 20px;
+                width: 20px;
+                background-image: url(/images/tele_icon.png);
+                background-position: center center;
+                background-size: contain;
+                position: absolute;
+                margin-left: -25px;
+            }
+
+
+
+
+/* FORM DESIGN */
+
+
+.sign_in #subscribe-submit {
+    padding: 10px;
+    border-radius: 10px!important;
+    border: 1px solid #cccccc61;
+    width: 63%!important;
+    margin: 5px auto;
+    display: block;
+    text-transform: uppercase;
+    /* color: #000; */
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Montserrat',sans-serif;
+}
+
+form.sign_in input {
+    padding: 10px;
+    border-radius: 10px!important;
+    border: 1px solid #cccccc61;
+    /* width: 30%; */
+    margin: 5px auto;
+    display: block;
+    letter-spacing: 0.5px;
+}
+
+.socials_btn {
+    letter-spacing:1px!important;
+}
+
+@media (max-width:799px) {
+    form.sign_in input {
+        width: 93%!important;
+    }
+    
+    .sign_in #subscribe-submit {
+        width: 100%!important;
+    }
+}
+
+
+.testbox input[type="text"] {
+    padding: 10px;
+    border-radius: 10px!important;
+    border: 1px solid #cccccc61;
+    width: 30%;
+}
+
+.testbox form h4 {
+    color: #000;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 500;
+}
+
+.testbox label, input {
+    color: #000;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+}
+
+.testbox h4::before {
+    content: "*";
+    color: red;
+    margin-right: 5px;
+}
+
+
+
+/*FOOTER*/
+.footer-links-body a {
+    color: #000!important;
+    font-weight: 500;
+}
+
+.footer-links-body a:hover {
+    color: #fff!important;
+}
+.footer-links-column.footer-links-column-members {
+    padding: 0;
+    margin:0;
+}
+
+.footer-blk {
+    padding: 20px;
+}
+.footer-links-body {
+    margin: 0;
+    text-align: center;
+}
+
+@media (max-width:799px) {
+    .footer-links-body a {
+        margin: 0;
+    }
+}
